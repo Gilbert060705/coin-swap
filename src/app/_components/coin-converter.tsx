@@ -38,7 +38,7 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({ coins }) => {
 
   useEffect(() => {
     setConvertedAmount(calculateConversion());
-  }, []);
+  }, [amount, fromCurrency, toCurrency]);
 
   useEffect(() => {
     if (isFromDropdownOpen && fromButtonRef.current) {
@@ -50,6 +50,11 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({ coins }) => {
       setToDropdownPosition({ top: rect.bottom + window.scrollY, left: rect.left + window.scrollX });
     }
   }, [isFromDropdownOpen, isToDropdownOpen]);
+
+  const handleSwapCurrencies = () => {
+    setFromCurrency(toCurrency);
+    setToCurrency(fromCurrency);
+  };
 
   return (
     <div className="w-full max-w-4xl mx-auto">
