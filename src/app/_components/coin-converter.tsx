@@ -62,7 +62,6 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({ coins }) => {
         <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-r from-orange-400 via-red-500 to-purple-600"></div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-          {/* From currency section */}
           <div>
             <label className="block text-black font-medium mb-2">Amount</label>
             <div className="relative">
@@ -96,7 +95,6 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({ coins }) => {
             </div>
           </div>
 
-          {/* Converted currency section */}
           <div>
             <label className="block text-black font-medium mb-2">Converted to</label>
             <div className="relative">
@@ -131,7 +129,6 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({ coins }) => {
           </div>
         </div>
 
-        {/* Dropdown Portals */}
         {isFromDropdownOpen &&
           createPortal(
             <div
